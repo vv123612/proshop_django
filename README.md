@@ -23,15 +23,31 @@ This project is from my Django + React collaboration wih Brad Traversy. Full Cou
 * PayPal / credit card integration
 
 
+
+
+
 # Download & Setup Instructions
+
+docker 
+run docker compose file in /docker_containers
 
 * 1 - Clone project: git clone https://github.com/divanov11/proshop_django/
 * 2 - cd proshop_django
 * 3 - Create virtual environment: virtualenv myenv
 * 4 - myenv\scripts\activate
 * 5 - pip install -r requirements.txt
-* 6 - python manage.py runserver
+* 6 - only for docker
+python manage.py runserver 0.0.0.0:8000 
 
 # Install react modules
 * 1 - cd frontend
+* 1.1 - change to IP django host. I couldn't fix for hostname
+"proxy": "http://172.26.0.2:8000",
 * 2 - npm install
+
+
+
+# Another my changes
+
+1. - * for ALLOWED_HOSTS
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'proshop-demo.herokuapp.com', "*", "dev_nodejs"]
